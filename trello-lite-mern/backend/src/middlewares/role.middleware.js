@@ -1,0 +1,23 @@
+// backend/src/middlewares/role.middleware.js
+const { ROLES } = require('../utils/constants');
+
+const requireRole = (...allowedRoles) => {
+  return (req, res, next) => {
+    if (!req.user) {
+      return res.status(401).json({ message: 'Authentication required' });
+    }
+
+    if (!allowedRoles.includes(req.user.role)) {
+      return res.status(403).json({ message: 'Insufficient permissions' });
+    }
+
+    next();
+  };
+};
+
+const requireAdmin = requireRole(ROLES.ADMIN);
+
+module.exports = {
+  requireRole,
+  requireAdmin,
+};

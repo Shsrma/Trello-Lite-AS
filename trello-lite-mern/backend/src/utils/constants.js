@@ -1,0 +1,25 @@
+// backend/src/utils/constants.js
+const ROLES = {
+  ADMIN: 'ADMIN',
+  MEMBER: 'MEMBER',
+};
+
+const TASK_STATUS = {
+  TODO: 'TODO',
+  IN_PROGRESS: 'IN_PROGRESS',
+  DONE: 'DONE',
+};
+
+const NOTIFICATION_TYPES = {
+  TASK_ASSIGNED: 'TASK_ASSIGNED',
+  TASK_UPDATED: 'TASK_UPDATED',
+  PROJECT_INVITE: 'PROJECT_INVITE',
+  TASK_COMMENT: 'TASK_COMMENT',
+  MENTION: 'MENTION',
+};
+
+module.exports = {
+  ROLES,
+  TASK_STATUS,
+  NOTIFICATION_TYPES,
+};
